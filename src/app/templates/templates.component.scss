@@ -1,0 +1,12 @@
+.down {
+    content: "";
+    width:0px;
+    height:0px;
+    border-left:30px solid transparent;
+    border-right:30px solid transparent;
+    border-top:30px solid #00bbd3;
+    position:absolute;
+    bottom:-30px; 
+    left: 50%;
+    margin-left: -30px;
+}

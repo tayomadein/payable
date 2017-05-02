@@ -1,0 +1,25 @@
+<div class="cyan-mono">
+  <h3 md-dialog-title color='accent'>Edit</h3>
+  <md-dialog-content>
+    <!-- Edit Form -->
+    <div>
+      <form>
+        <div layout="row" layout-margin>
+          <md-select flex="50" placeholder="Choose A Service" [(ngModel)]="selectedService" name="service">
+            <md-option color='accent' *ngFor="let service of services" [value]="service.value">
+              {{service.name}}
+            </md-option>
+          </md-select>
+        </div>
+        <div layout="row" layout-margin>
+          <md-input-container flex>
+            <input color='accent' mdInput placeholder="Amount" [(ngModel)]="lastPrice" name="price">
+          </md-input-container>
+        </div>
+      </form>
+    </div>
+  </md-dialog-content>
+  <md-dialog-actions layout="row" layout-align="end center">
+    <button md-raised-button color='accent' (click)="paynow()">Pay Now</button>
+  </md-dialog-actions>
+</div>

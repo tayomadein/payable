@@ -1,0 +1,27 @@
+<div class="cyan-mono">
+  <h3 md-dialog-title color='accent'>Payment Powered by <span><img src="assets/icons/payable.png" width="100" height="26" push-top-sm></span></h3>
+  <md-dialog-content>
+    <!-- Edit Form -->
+    <div>
+      <div layout="row" layout-margin>
+        <md-input-container flex>
+          <input mdInput placeholder="First name" [(ngModel)]="firstname">
+        </md-input-container>
+        <md-input-container flex>
+          <input mdInput placeholder="Last Name" [(ngModel)]="lastname">
+        </md-input-container>
+      </div>
+      <div layout="row" layout-margin>
+        <md-input-container flex>
+          <input mdInput placeholder="Email" type="email" [(ngModel)]="email">
+        </md-input-container>
+      </div>
+      <div layout="row" layout-margin>
+        <h4>Embed 3rd Party Payment Gateway</h4>
+      </div>
+    </div>
+  </md-dialog-content>
+  <md-dialog-actions layout="row" layout-align="end center">
+    <button md-raised-button color='accent' (click)="paynow()">Confirm Pay</button>
+  </md-dialog-actions>
+</div>

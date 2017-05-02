@@ -1,0 +1,123 @@
+<div class="grad1" layout="column" layout-fill>
+  <div class="md-content" layout-padding flex>
+    <div layout-gt-xs="row" layout-align-gt-xs="center start" class="margin">
+        <md-tab-group>
+          <md-tab label="Login">
+            <div flex-gt-xs="80">
+              <md-card tdMediaToggle="gt-xs" [mediaClasses]="['push-top-lg']">
+                <md-divider></md-divider>
+                <md-card-content>
+                  <form #loginForm="ngForm">
+                    <div layout="row">
+                      <md-input-container flex> 
+                        <input mdInput #userElement #userControl="ngModel" placeholder="Email" type="text" name="username" [(ngModel)]="username" required>
+                        <span md-prefix><md-icon>person</md-icon></span>
+                        <md-hint align="start">
+                          <span [hidden]="!userControl.errors?.required || userControl.pristine" class="tc-red-600">Required</span>
+                        </md-hint>
+                        <md-hint align="end">user@user.com</md-hint>
+                      </md-input-container>
+                    </div>
+                    <div layout="row">
+                      <md-input-container flex> 
+                        <input mdInput #passElement #passControl="ngModel" placeholder="Password" type="password" name="password" [(ngModel)]="password" required>
+                        <span md-prefix><md-icon>lock</md-icon></span>
+                        <md-hint align="start">
+                          <span [hidden]="!passControl.errors?.required || passControl.pristine" class="tc-red-600">Required</span>
+                        </md-hint>
+                        <md-hint align="end">Protect your password</md-hint>
+                      </md-input-container>
+                    </div>
+                    <div layout="row">
+                        <md-checkbox [(ngModel)]="tos" name="agreesToTOS">
+                          Remember Me
+                        </md-checkbox>
+                    </div>
+                  </form>
+                </md-card-content>
+                <md-divider></md-divider>
+                <md-card-actions layout="row">
+                  <button flex md-raised-button color="accent" (click)="login()">Sign In</button> <!-- [disabled]="!loginForm.form.valid"-->
+                </md-card-actions>
+              </md-card>
+            </div>
+          </md-tab>
+          <md-tab label="Register">
+            <div flex-gt-xs="80">
+              <md-card tdMediaToggle="gt-xs" [mediaClasses]="['push-top-lg']">
+                <!--md-card-title>payable logo</md-card-title-->
+                <md-divider></md-divider>
+                <md-card-content>
+                  <form #loginForm="ngForm">
+                    <div layout="row">
+                      <md-input-container flex> 
+                        <input mdInput #userElement #userControl="ngModel" placeholder="First Name" maxlength="30" type="text" name="firstname" [(ngModel)]="firstname" required>
+                        <span md-prefix><md-icon>person</md-icon></span>
+                        <md-hint align="start">
+                          <span [hidden]="!userControl.errors?.required || userControl.pristine" class="tc-red-600">Required</span>
+                        </md-hint>
+                        <md-hint align="end">{{userElement.value.length}} / 30</md-hint>
+                      </md-input-container>
+                    </div>
+                     <div layout="row">
+                      <md-input-container flex> 
+                        <input mdInput #userElement #userControl="ngModel" placeholder="Last Name" maxlength="30" type="text" name="lastname" [(ngModel)]="lastname" required>
+                        <span md-prefix><md-icon>person</md-icon></span>
+                        <md-hint align="start">
+                          <span [hidden]="!userControl.errors?.required || userControl.pristine" class="tc-red-600">Required</span>
+                        </md-hint>
+                        <md-hint align="end">{{userElement.value.length}} / 30</md-hint>
+                      </md-input-container>
+                    </div>
+                    <div layout="row">
+                      <md-input-container flex> 
+                        <input mdInput #userElement #userControl="ngModel" placeholder="Email" type="email" name="username" [(ngModel)]="username" required>
+                        <span md-prefix><md-icon>person</md-icon></span>
+                        <md-hint align="start">
+                          <span [hidden]="!userControl.errors?.required || userControl.pristine" class="tc-red-600">Required</span>
+                        </md-hint>
+                        <md-hint align="end">user@user.com</md-hint>
+                      </md-input-container>
+                    </div>
+                    <div layout="row">
+                      <md-input-container flex> 
+                        <input mdInput #passElement #passControl="ngModel" placeholder="Password" type="password" name="password" [(ngModel)]="password" required>
+                        <span md-prefix><md-icon>lock</md-icon></span>
+                        <md-hint align="start">
+                          <span [hidden]="!passControl.errors?.required || passControl.pristine" class="tc-red-600">Required</span>
+                        </md-hint>
+                        <md-hint align="end">Protect your password</md-hint>
+                      </md-input-container>
+                    </div>
+                    <div layout="row">
+                        <md-checkbox [(ngModel)]="tos" name="agreesToTOS">
+                          I have read and agree to the terms of service.
+                        </md-checkbox>
+                    </div>
+                  </form>
+                </md-card-content>
+                <md-divider></md-divider>
+                <md-card-actions layout="row">
+                  <button flex md-raised-button color="accent" (click)="login()">Register</button>
+                </md-card-actions>
+              </md-card>
+            </div>
+          </md-tab>
+        </md-tab-group>
+    </div>
+  </div>
+  <!--div layout="row">
+    <span><a [routerLink]="['/templates']"><md-icon class="md-icon-logo"><img src="assets/icons/payable.png" width="100" height="28"></md-icon></a></span>
+  </div-->
+</div>
+<section class="bgc-blue-grey-800 tc-blue-grey-100">
+    <div layout-gt-xs="row" layout-align-gt-xs="center center">
+      <div flex layout="row" flex-gt-xs="50" layout-align="center center">
+        <span><a [routerLink]="['/templates']"><p class="text-md tc-blue-grey-100">Go home </p></a></span>
+        <span flex></span>
+        <span><a [routerLink]="['/templates']"><md-icon class="md-icon-logo"><img src="assets/icons/payable.png" width="100" height="28" push-to-sm></md-icon></a></span>
+        <span flex></span>
+        <span><a [routerLink]="['/templates']"><p class="text-md tc-blue-grey-100">Privacy Policy </p></a></span>
+      </div>
+    </div>  
+</section>
